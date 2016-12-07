@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\customer_notitfication_layout_one.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\customer_notitfication_layout_one.xml"
+    },
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\jpush_webview_layout.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\jpush_webview_layout.xml"
+    },
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\jpush_popwin_layout.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\jpush_popwin_layout.xml"
+    },
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\set_push_time.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\set_push_time.xml"
+    },
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\push_set_dialog.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\push_set_dialog.xml"
+    },
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\customer_notitfication_layout.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\customer_notitfication_layout.xml"
+    },
+    {
+        "merged": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "F:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\res\\layout\\main.xml"
+    }
+]

@@ -1,0 +1,7 @@
+#Wed Dec 07 10:00:07 GMT+08:00 2016
+base.0=F\:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9f703869d6ddd7737c337d0f201229fa0b246667
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=F\:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_f0b23b5350c7ae54532330e9e7f17f4c3624fa3f\\classes.dex
+base.1=F\:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_f0b23b5350c7ae54532330e9e7f17f4c3624fa3f
+file.0=F\:\\WangXC\\InterView-Explain\\InterView-jiguang\\MyJPush\\JPushExample(562144)\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_9f703869d6ddd7737c337d0f201229fa0b246667\\classes.dex

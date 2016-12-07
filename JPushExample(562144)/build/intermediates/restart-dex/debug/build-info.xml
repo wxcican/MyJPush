@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="23"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.1"
+    timestamp="4559988915249"
+    token="-6823788286966226791"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="783" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="182" />
+    <task
+        name="verifier"
+        duration="109" />
+
+    <artifact
+        location="F:\WangXC\InterView-Explain\InterView-jiguang\MyJPush\JPushExample(562144)\build\outputs\apk\JPushExample(562144)-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="4559988915249"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="F:\WangXC\InterView-Explain\InterView-jiguang\MyJPush\JPushExample(562144)\build\outputs\apk\JPushExample(562144)-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
