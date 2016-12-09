@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,12 +17,17 @@ import java.util.logging.Logger;
 
 import cn.jpush.android.api.JPushInterface;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+
 /**
  * Created by Administrator on 2016/12/9 0009.
  */
 
 public class MyReceiver extends BroadcastReceiver {
     private static final String TAG = "MyReceiver";
+    private static final String TYPE_THIS = "this";
+    private static final String TYPE_ANOTHER = "another";
+
 
     private NotificationManager nm;
 
@@ -40,11 +46,14 @@ public class MyReceiver extends BroadcastReceiver {
         } else if (JPushInterface.ACTION_MESSAGE_RECEIVED.equals(intent.getAction())) {
             Log.d(TAG, "接受到推送下来的自定义消息");
 
+
         } else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
             Log.d(TAG, "接受到推送下来的通知");
 
-
             receivingNotification(context,bundle);
+
+            //自定义的方法。。。可以在这里搞事情
+            Toast.makeText(context, "收到通知", Toast.LENGTH_SHORT).show();
 
         } else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
             Log.d(TAG, "用户点击打开了通知");
@@ -67,26 +76,23 @@ public class MyReceiver extends BroadcastReceiver {
     }
 
     private void openNotification(Context context, Bundle bundle){
+        //从通知中拿到“字段”
         String extras = bundle.getString(JPushInterface.EXTRA_EXTRA);
         String myValue = "";
         try {
+            //拿到“字段”的json数据
             JSONObject extrasJson = new JSONObject(extras);
+            //根据“字段”里的“键”，拿到“值”
             myValue = extrasJson.optString("myKey");
         } catch (Exception e) {
             Log.w(TAG, "Unexpected: extras is not a valid json", e);
             return;
         }
-//        if (TYPE_THIS.equals(myValue)) {
-//            Intent mIntent = new Intent(context, ThisActivity.class);
-//            mIntent.putExtras(bundle);
-//            mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            context.startActivity(mIntent);
-//        } else if (TYPE_ANOTHER.equals(myValue)){
-//            Intent mIntent = new Intent(context, AnotherActivity.class);
-//            mIntent.putExtras(bundle);
-//            mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            context.startActivity(mIntent);
-//        }
+        if (TYPE_THIS.equals(myValue)) {
+            Toast.makeText(context, "嘿！你传的值是——this！", Toast.LENGTH_SHORT).show();
+        } else if (TYPE_ANOTHER.equals(myValue)){
+            Toast.makeText(context, "哦！你传的值是--another！", Toast.LENGTH_SHORT).show();
+        }
     }
 
     // 打印所有的 intent extra 数据
