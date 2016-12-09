@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 import cn.jpush.android.api.JPushInterface;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 /**
@@ -27,7 +28,6 @@ public class MyReceiver extends BroadcastReceiver {
     private static final String TAG = "MyReceiver";
     private static final String TYPE_THIS = "this";
     private static final String TYPE_ANOTHER = "another";
-
 
     private NotificationManager nm;
 
@@ -45,6 +45,11 @@ public class MyReceiver extends BroadcastReceiver {
 
         } else if (JPushInterface.ACTION_MESSAGE_RECEIVED.equals(intent.getAction())) {
             Log.d(TAG, "接受到推送下来的自定义消息");
+
+            Toast.makeText(context, "收到自定义消息", Toast.LENGTH_SHORT).show();
+
+            //触发自定义方法
+            open(context,bundle);
 
 
         } else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
@@ -92,6 +97,27 @@ public class MyReceiver extends BroadcastReceiver {
             Toast.makeText(context, "嘿！你传的值是——this！", Toast.LENGTH_SHORT).show();
         } else if (TYPE_ANOTHER.equals(myValue)){
             Toast.makeText(context, "哦！你传的值是--another！", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //收到自定义消息时会触发的方法
+    private void open(Context context,Bundle bundle){
+        //从通知中拿到“字段”
+        String extras = bundle.getString(JPushInterface.EXTRA_EXTRA);
+        String myValue = "";
+        try {
+            //拿到“字段”的json数据
+            JSONObject extrasJson = new JSONObject(extras);
+            //根据“字段”里的“键”，拿到“值”
+            myValue = extrasJson.optString("key");
+        } catch (Exception e) {
+            Log.w(TAG, "Unexpected: extras is not a valid json", e);
+            return;
+        }
+        if (myValue.equals("yasuo")) {
+            Toast.makeText(context, "嘿！面对疾风吧！", Toast.LENGTH_SHORT).show();
+        } else if (myValue.equals("tuoersuo")){
+            Toast.makeText(context, "哦！背对疾风吧！", Toast.LENGTH_SHORT).show();
         }
     }
 

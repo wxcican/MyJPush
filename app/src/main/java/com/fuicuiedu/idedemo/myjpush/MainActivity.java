@@ -4,9 +4,15 @@ import android.app.Notification;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import cn.jpush.android.api.BasicPushNotificationBuilder;
 import cn.jpush.android.api.CustomPushNotificationBuilder;
 import cn.jpush.android.api.JPushInterface;
+import cn.jpush.android.data.JPushLocalNotification;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +45,29 @@ public class MainActivity extends AppCompatActivity {
         //指定下拉状态是显示的通知图标
         builder1.layoutIconDrawable = R.drawable.xiaoliu;
         JPushInterface.setPushNotificationBuilder(2,builder1);
+
+        //做一个本地通知
+        JPushLocalNotification ln = new JPushLocalNotification();
+        //设置通知栏样式
+        ln.setBuilderId(0);
+        //设置通知内容文本
+        ln.setContent("hhh");
+        //设置通知标题
+        ln.setTitle("ln");
+        //设置本地通知的ID
+        ln.setNotificationId(11111111);
+        //设置通知时间
+        ln.setBroadcastTime(System.currentTimeMillis() + 1000 * 3);
+
+        //设置通知里的字段
+        Map<String , Object> map = new HashMap<>() ;
+        map.put("name", "jpush") ;
+        map.put("test", "111") ;
+        JSONObject json = new JSONObject(map) ;
+        ln.setExtras(json.toString()) ;
+
+        //把做好的本地通知添加进来
+        JPushInterface.addLocalNotification(getApplicationContext(), ln);
 
     }
 }
